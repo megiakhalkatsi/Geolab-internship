@@ -33,9 +33,9 @@
 <header>
 	<div class="container-fluid">
 	<div class="container">
-		<div class="row top_nav">
+		<div class="row top_nav" id="top_nav">
 			<div class="col-lg-1 col-md-2 col-sm-3 col-3 logo">
-				<a href=""><img src="images/Mainlogo.png"></a>
+				<a href=""><img src="images/Mainlogo.png" id="logo"></a>
 			</div>
 
 			<div class="col-lg-5 col-md-6 offset-md-4 offset-lg-6 col-sm-9 col-9 nav1">
@@ -301,6 +301,23 @@
 			toggleMenu();
 		});
 	}
+</script>
+
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("top_nav").style.padding = "2px 0px";
+        document.getElementById("top_nav").style.background = "rgba(105,37,143,0.3)";
+        document.getElementById("logo").style.width = "45px";
+    } else {
+        document.getElementById("top_nav").style.padding = "10px 0px";
+        document.getElementById("top_nav").style.background = "white";
+        document.getElementById("logo").style.width = "60px";
+    }
+}
 </script>
 </body>
 </html>
